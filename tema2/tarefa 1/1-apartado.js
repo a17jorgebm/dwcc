@@ -14,8 +14,6 @@ imprimirTablaMultiplicarNumero()
 
 function imprimirDezPrimeirosNumerosFibonnacci(){
     let [a,b]=[0,1]
-    console.log(a)
-    console.log(b)
     let i=0
     let texto='<hr><h3>Primeiros 10 numeros de fibonnacci</h3>'
     while (i<10){
