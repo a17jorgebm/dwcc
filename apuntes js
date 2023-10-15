@@ -21,6 +21,7 @@ let { nombre, edad } = personaje;
 
 (condicion) ? expresionV : expresionF;	if acortado
 typeof nomeVariable	saber o tipo da variable
+Math.floor(Math.random() * (100+0+1)) //Numero aleatorio entre o 0 e o 100.100(max), 0(min), +1 para que entre o 100 senon o maximo sería 99
 
 Estructuras de control------
 if(){
