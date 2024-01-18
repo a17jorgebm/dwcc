@@ -1,6 +1,0 @@
-Casting operator <> :
-sirve para indicar de que tipo é un valor, por ejemplo para pillar o value dun HTMLInputElement temos que indicalo, senon da erro.
-- let numero:number=parseInt((document.getElementById('numero-primo') as HTMLInputElement).value)
-ou
-- let numero:number=parseInt((<HTMLInputElement>document.getElementById('numero-primo')).value)
------
