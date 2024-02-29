@@ -113,6 +113,45 @@ array1.reverse() //dalle a volta ao array
 array1.sort() //ordena o array
 ````
 
+# Formularios
+Todo dato enviado mediante un formulario ao servidor chega como **TEXTO**.
+
+## Maneiras de acceder a eles
+1. Mediante o id `let formulario=document.getElementById(id)`
+2. Mediante tag name 
+   3. `let formulario=document.getElementByTagName("form")` - Esto pilla todos os forms do documento.
+3. Mediante .forms
+   5. `let todos=document.forms` - pillaos todos
+      5. `todos["nomeFormulario"]` - solo pilla o que ten ese nombre
+      6. `todos[0]` - pilla o primeiro
+4. Mediante o name directamente (o atributo name)
+   5. `formulario=document.nomeForm`
+
+
+# Cookies
+## Creacion
+````javascript
+document.cookie = "username=John Doe; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/";
+````
+* Ejemplo, funcion que crea unha cookie de x dias de duracion.
+````javascript
+function crearCookie(nombre,valor,numDiasDuracion){
+   let d=new Date()
+   d.setTime(d.getTime()+(numDiasDuracion*24*60*60*1000)) //é en ms
+   let dataFomateada=d.toGMTString() //IMPORTANTE
+   document.cookie=nombre+'='+valor+";expires="+dataFomateada+";path=/"
+}
+````
+## Buscar unha en concreto
+Hai que facelo manualmente, esta é unha forma facil que encontrei
+````javascript
+ let cookies=document.cookie.split(';') //separamos as cookies
+ existe = cookies.filter((cookie)=>{ //filtramolas pa ver se algunha ten o mesmo nombre ca que buscamos
+     let [nome,valor] = cookie.split('=')
+     return nome.trim() === nombreBuscado.trim()
+ }).length > 0 //devolvemos true se o array é maior ca 0
+ console.log(existe) //devolve true ou false
+````
 
 
 
