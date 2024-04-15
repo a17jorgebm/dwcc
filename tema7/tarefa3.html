@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarefa 3 tema 7</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="tarefa3.js"></script>
+        <style>
+            .usuarios-lista{
+                padding: 5px;
+                border-radius: 5px;
+                background-color: wheat;
+                cursor: pointer;
+                margin: 4px 0px;
+                max-width: 35%;
+            }
+            .usuarios-lista:hover{
+                font-weight: bold;
+            }
+            #datos-usuario{
+                padding: 15px;
+                border-radius: 5px;
+            }
+            .success{
+                background-color: #d8f8e1;
+            }
+            .error{
+                background-color: #ff9688;
+            }
+            #fotos-album img{
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="usuarios">
+            <h3>Seleccione un usuario de la lista para cargar sus datos:</h3>
+            <ul id="lista"></ul>
+            <div id="datos-usuario"></div>
+        </div>
+        <div id="albums">
+            <h3>Seleccione un album para ver sus fotos:</h3>
+            <div id="div-selector-album"></div>
+            <div id="fotos-album"></div>
+        </div>
+    </body>
+</html>

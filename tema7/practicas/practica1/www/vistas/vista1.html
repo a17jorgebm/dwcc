@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript">
+            let peticion;
+            const iniciar = () => {
+                peticion=new XMLHttpRequest();
+                peticion.open('GET','http://localhost/proba');
+                peticion.send();
+                peticion.addEventListener('load',cargada);
+                document.getElementById('estado').classList=["esperando"];
+                document.getElementById('estado').innerText="Esperando respuesta...";
+            }
+            const cargada = () => {
+                document.getElementById('contido').innerText=peticion.responseText;
+                document.getElementById('estado').classList=["cargada"];
+                document.getElementById('estado').innerText="Cargada!!";
+            }
+
+            window.addEventListener('load',iniciar);
+
+            $(()=>{
+                $('#animar').click(()=>{
+                    $('#estado').animate({
+                        height: '+=50',
+                        width: '-=100',
+                        margin: '+=13'
+                    },1000)
+                })
+            });
+        </script>
+        <style>
+            #contido{
+                background: yellow;
+            }
+            .cargada{
+                background: green;
+            }
+
+            .esperando{
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Contido que devolviu o servidor:</p>
+        <div id="contido">
+            Nada...
+        </div>
+        <p>Estado da peticion</p>
+        <div id="estado">
+
+        </div>
+
+        <button id="animar">Animar</button>
+    </body>
+</html>

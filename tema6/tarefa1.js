@@ -6,7 +6,7 @@ console.log('Contido segundo parágrafo(se hai): '+ (numeroParrafosPaxina>1 ? pa
 
 const ligazonsPaxina=getLigazons();
 const numeroLigazonsPaxina=ligazonsPaxina.length
-const numeroLigazonsPrimeiroParrafo=getLigazons(numeroParrafosPaxina[0]).length
+const numeroLigazonsPrimeiroParrafo=getLigazons(parrafosPaxina[0]).length
 
 console.log('Numero de ligazons: '+numeroLigazonsPaxina)
 console.log('Link da primeira ligazón: '+ligazonsPaxina[0].href)
