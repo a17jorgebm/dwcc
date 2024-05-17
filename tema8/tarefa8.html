@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        section{
+            margin: 20px 0px;
+        }
+
+        .fade-enter-active, .fade-leave-active{
+            transition: opacity 2s;
+        }
+        .fade-enter-from, .fade-leave-to{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <section>
+            <h3>Saúdo: {{ mensaxe }}</h3>
+            <label for="proba-text">Indica o novo saúdo: </label>
+            <input type="text" v-model="mensaxe" name="proba-text">
+        </section>
+
+        <section>
+            <label><input type="radio" v-model="valor" value="1">Un</label>
+            <label><input type="radio" v-model="valor" value="2">Dous</label>
+            <label><input type="radio" v-model="valor" value="3">Tres</label>
+    
+            Seleccionado: {{ valor }}
+        </section>
+
+        <section>
+            <p v-if="mostrar">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et consectetur, quia provident nulla cupiditate rem aliquid libero vel odio quae.</p>
+            <button :type="tipoBoton" @click="cambiarValorMostrarTexto(true)">Mostrar texto</button>
+            <button :type="tipoBoton" @click="cambiarValorMostrarTexto(false)">Ocultar texto</button>
+        </section>
+
+        <section>
+            <h3>Animales de la tienda: </h3>
+            <ul>
+                <li v-for="animal in animales">{{ animal.nombre }}</li>
+            </ul>
+        </section>
+
+        <section>
+            <transition name="fade">
+                <h3 v-if="divTransicionVisible">Este elemento aparece e desaparece!</h3>
+            </transition>
+        </section>
+
+        <pepaxina />
+
+    </div>
+    <script src="tarefa8.js"></script>
+    <script src="components/Footer.js"></script>
+    <script>
+        App.mount('#app')
+    </script>
+</body>
+</html>
